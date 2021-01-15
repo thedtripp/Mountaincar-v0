@@ -22,7 +22,7 @@ def max_action(Q, state, action=[0, 1, 2]):
 if __name__ == '__main__':
     env = gym.make('MountainCar-v0')
     env._max_episode_steps = 1000
-    n_games = 3
+    n_games = 1
     alpha = 0.1
     gamma = 0.99
     eps = 0
@@ -69,5 +69,9 @@ if __name__ == '__main__':
     mean_rewards = np.zeros(n_games)
     for t in range(n_games):
         mean_rewards[t] = np.mean(total_rewards[max(0, t - 50):(t + 1)])
-    plt.plot(mean_rewards)
+    plt.plot(mean_rewards, label='Mean Rewards')
+    plt.xlabel('Game Number')
+    plt.ylabel('Score')
+    plt.title('Mountain Car Q Learning')
+    plt.legend()
     plt.savefig('mountaincar.png')
