@@ -74,4 +74,4 @@ if __name__ == '__main__':
     plt.ylabel('Score')
     plt.title('Mountain Car Q Learning')
     plt.legend()
-    plt.savefig('mountaincar.png')
+    plt.savefig('mountaincar2.png')
